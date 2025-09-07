@@ -1,6 +1,6 @@
 username = "nguyenanhquan"
 password = "17022003"
-uri = f"mongodb://{username}:{password}localhost:27017"
+uri = f"mongodb://{username}:{password}@localhost:27017"
 collection = "summary"
 db_name = "glamira"
 domains = "domains.csv"
