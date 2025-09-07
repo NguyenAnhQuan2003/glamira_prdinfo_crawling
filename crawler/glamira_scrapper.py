@@ -519,9 +519,9 @@ class GlamiraScrapper:
 
         # Create all domain-product combinations
         for _, domain_row in self.domains_df.iterrows():
-            domain = domain_row['domains']
+            domain = domain_row['domain']
             for _, product_row in self.products_df.iterrows():
-                product_id = str(product_row['pid'])
+                product_id = str(product_row['product_id'])
                 tasks.append((domain, product_id))
 
         logging.info(f"Starting scraping with {max_workers} workers for {len(tasks)} tasks")
