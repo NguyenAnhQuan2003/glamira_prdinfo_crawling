@@ -1,5 +1,8 @@
 .idea/
 venv/
 *.log
+*.bson
+*.json
+*.db
 __pycache__/
 .DS_Store
