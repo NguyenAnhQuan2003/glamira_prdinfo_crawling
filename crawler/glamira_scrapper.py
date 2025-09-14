@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
-# from dotenv import load_dotenv
-# load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../.env"))
+from dotenv import load_dotenv
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../.env"))
 from logs.config_logs import setup_logging
 
 setup_logging()

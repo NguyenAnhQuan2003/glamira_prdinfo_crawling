@@ -4,5 +4,6 @@ venv/
 *.bson
 *.json
 *.db
+*.pyc
 __pycache__/
 .DS_Store
