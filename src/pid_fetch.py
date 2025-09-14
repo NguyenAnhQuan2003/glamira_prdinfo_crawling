@@ -11,7 +11,7 @@ cfg = MongoConfig(
 
 client = get_mongo_client(cfg)
 collection = get_collection_name(client, cfg.db_name, collection)
-print("✅ Kết nối thành công!")
+print("Kết nối thành công!")
 
 batch_size = 100000
 
