@@ -13,6 +13,7 @@ try:
     client = get_mongo_client(cfg)
     collection_old = get_collection_name(client, cfg.db_name, collection_prdinfo)
     collection = get_collection_name(client, cfg.db_name, collection_products)
+    logging.info(collection_old, collection)
     logging.info("Connected to mongodb successfully!")
     pipeline = [
         {
@@ -37,4 +38,4 @@ try:
     else:
         logging.error("Insert failed!")
 except Exception as e:
-    logging.error("Error connect DB products".format(e))
+    logging.error("Error connect DB products: {}".format(e))
