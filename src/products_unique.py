@@ -13,8 +13,8 @@ try:
     client = get_mongo_client(cfg)
     collection_old = get_collection_name(client, cfg.db_name, collection_prdinfo)
     collection = get_collection_name(client, cfg.db_name, collection_products)
-    logging.info(collection_old, collection)
     logging.info("Connected to mongodb successfully!")
+    print(collection_old, collection)
     pipeline = [
         {
             "$match": {
