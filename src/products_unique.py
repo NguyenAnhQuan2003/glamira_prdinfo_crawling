@@ -17,11 +17,6 @@ try:
     print(collection_old, collection)
     pipeline = [
         {
-            "$match": {
-                "title": {"$regex": "^[A-Za-z0-9 ,.!?\"'-]+$"}
-            }
-        },
-        {
             "$group": {
                 "_id": "$product_id",
                 "doc": {"$first": "$$ROOT"}
@@ -31,6 +26,9 @@ try:
             "$replaceRoot": {"newRoot": "$doc"}
         }
     ]
+    for doc in collection_old.find().limit(5):
+        print(doc.get("title"))
+
     result = list(collection_old.aggregate(pipeline))
     if result:
         collection.insert_many(result)
