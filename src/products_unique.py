@@ -26,8 +26,6 @@ try:
             "$replaceRoot": {"newRoot": "$doc"}
         }
     ]
-    for doc in collection_old.find().limit(5):
-        print(doc.get("title"))
 
     result = list(collection_old.aggregate(pipeline))
     if result:
