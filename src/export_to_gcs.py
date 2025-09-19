@@ -9,6 +9,29 @@ from google.cloud import storage
 
 setup_logging()
 
+def check_bucket_exists(gcs_client: storage.Client, bucket_name: str) -> bool:
+    if not isinstance(bucket_name, str):
+        logging.error(f"Tên bucket phải là chuỗi, nhận được: {type(bucket_name)}")
+        return False
+    try:
+        bucket = gcs_client.get_bucket(bucket_name)
+        logging.info(f"Bucket {bucket_name} tồn tại và sẵn sàng sử dụng.")
+        return True
+    except Exception as e:
+        logging.error(f"Bucket {bucket_name} không tồn tại hoặc không có quyền truy cập: {str(e)}")
+        return False
+
+def clean_document(document: dict) -> dict:
+    def recursive_clean(data):
+        if isinstance(data, dict):
+            return {k: recursive_clean(v) for k, v in data.items()}
+        elif isinstance(data, list):
+            return [recursive_clean(item) for item in data]
+        elif data == "":
+            return []
+        return data
+    return recursive_clean(document)
+
 def export_to_gcs(
         mongo_config: MongoConfig,
         collection_name: str,
@@ -18,6 +41,8 @@ def export_to_gcs(
         gcs_client = storage.Client()
         bucket = gcs_client.bucket(gcs_bucket_name)
         logging.info("Connecting to Bucket!")
+        if not check_bucket_exists(gcs_client, gcs_bucket_name):
+            raise ValueError(f"Bucket {gcs_bucket_name} không tồn tại hoặc không có quyền truy cập.")
 
         client = get_mongo_client(mongo_config)
         collection = get_collection_name(client, mongo_config.db_name, collection_name)
