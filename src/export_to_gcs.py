@@ -47,7 +47,7 @@ def export_multiple_collections(
     try:
         for collection in collection_name:
             logging.info(f"Bắt đầu xuất collection: {collection}")
-            export_to_gcs(mongo_config, collection_name, gcs_bucket_name)
+            export_to_gcs(mongo_config, collection, gcs_bucket_name)
             logging.info(f"Hoàn thành xuất collection: {collection}")
     except Exception as e:
         logging.error("Error exporting GCS {}".format(e))
