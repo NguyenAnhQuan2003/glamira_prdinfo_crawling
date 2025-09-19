@@ -41,7 +41,7 @@ def export_to_gcs(
 
 def export_multiple_collections(
         mongo_config: MongoConfig,
-        collection_name: str,
+        collection_name: list,
         gcs_bucket_name: str,
 ):
     try:
