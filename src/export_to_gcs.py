@@ -83,7 +83,7 @@ if __name__ == "__main__":
             uri=uri,
             db_name=db_name
         )
-        COLLECTIONS = [collection, collection_products, collection_location]
+        COLLECTIONS = [collection_products, collection_location]
         GCS_BUCKET = "data_glamira_behavier"
         export_multiple_collections(mongo_config = mongo_config, collection_name=COLLECTIONS, gcs_bucket_name=GCS_BUCKET)
     except Exception as e:
