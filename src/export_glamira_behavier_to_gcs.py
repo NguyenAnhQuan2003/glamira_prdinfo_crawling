@@ -3,6 +3,7 @@ import logging
 from config.dir.address import uri, db_name, collection
 from logs.config_logs import setup_logging
 from config.connect import MongoConfig, get_mongo_client, get_collection_name
+from datetime import datetime
 import os
 import json
 from google.api_core import retry
@@ -23,6 +24,8 @@ def clean_document(document: dict) -> dict:
             return {k: recursive_clean(v) for k, v in data.items()}
         elif isinstance(data, list):
             return [recursive_clean(item) for item in data]
+        elif isinstance(data, datetime):
+            return data.isoformat()
         elif data == "":
             return []
         return data
