@@ -19,14 +19,14 @@ os.makedirs(MERGED_DIR, exist_ok=True)
 
 
 def clean_document(document: dict) -> dict:
-    def recursive_clean(data):
+    def recursive_clean(data, parent_key=None):
         if isinstance(data, dict):
-            return {k: recursive_clean(v) for k, v in data.items()}
+            return {k: recursive_clean(v, k) for k, v in data.items()}
         elif isinstance(data, list):
-            return [recursive_clean(item) for item in data]
+            return [recursive_clean(item, parent_key) for item in data]
         elif isinstance(data, datetime):
             return data.isoformat()
-        elif data == "":
+        elif data == "" and parent_key in ["option", "cart_products"]:
             return []
         return data
     return recursive_clean(document)
