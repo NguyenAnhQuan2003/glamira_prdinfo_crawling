@@ -16,6 +16,7 @@ with open(input_file, "r", encoding="utf-8") as infile:
         try:
             data = json.loads(line.strip())
             all_fields.update(data.keys())
+            logging.info(f"Processing line {i}")
         except json.JSONDecodeError as e:
             logging.error("Failed to parse ling {}".format(e))
             continue
