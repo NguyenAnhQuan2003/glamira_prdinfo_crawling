@@ -1,12 +1,12 @@
 import json
 import logging
 
-from config.dir.address import output_dir_jsonl, data_header
+from config.dir.address import data_summary_jsonl, data_header
 from logs.config_logs import setup_logging
 setup_logging()
 
 
-input_file = output_dir_jsonl
+input_file = data_summary_jsonl
 output_file = data_header
 
 all_fields = set()
