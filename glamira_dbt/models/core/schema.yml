@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: dim_ip_location
+    description: "table ip_location"
+    config:
+      materialized: "table"
+      schema: dim_glamira
+    columns:
+      - name: location_key
+        data_tests:
+          - unique
+          - not_null
+      - name: city
+        data_tests:
+          - not_null
+      - name: region
+        data_tests:
+          - not_null
+      - name: country_short
+        data_tests:
+          - not_null
+      - name: country_long
+        data_tests:
+          - not_null
+      - name: ip
+        data_tests:
+          - not_null
+  - name: dim_user
+    config:
+      materialized: table
+      schema: dim_glamira
+    columns:
+      - name: user_key
+        data_test:
+          - unique
+          - not_null
+      - name: device_id
+        data_tests:
+          - not_null
+      - name: email_address
+        data_tests:
+          - not_null
+      - name: user_agent
+        data_tests:
+          - not_null
+  - name: dim_products
+    config:
+      materialized: table
+      schema: dim_glamira
+    columns:
+      - name: product_key
+        data_tests:
+          - unique
+          - not_null
+      - name: product_name
+      - name: product_price
+      - name: category_id
+      - name: category_name
+      - name: collection_id
+      - name: collection_name
+      - name: product_type
+      - name: visible_contents
+      - name: product_status
+  - name: dim_date
+    config:
+      materialized: table
+      schema: dim_glamira
+    columns:
+      - name: date_key
+        data_tests:
+          - unique
+          - not_null
+      - name: date
+      - name: day_of_week
+      - name: day_of_month
+      - name: day_of_year
+      - name: month
+      - name: year

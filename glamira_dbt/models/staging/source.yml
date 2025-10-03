@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_dataset
+    database: sinuous-maker-466913-j5
+    schema: raw_glamira
+    tables:
+      - name: raw_ip_location
+      - name: raw_summary
+      - name: raw_products
