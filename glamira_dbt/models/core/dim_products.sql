@@ -1,4 +1,5 @@
 SELECT
+    DISTINCT
     product_key,
     product_price,
     product_name,
@@ -8,6 +9,5 @@ SELECT
     collection_name,
     product_type,
     visible_contents,
-    quantity,
     product_status
 FROM {{ref('stg_raw_products')}}

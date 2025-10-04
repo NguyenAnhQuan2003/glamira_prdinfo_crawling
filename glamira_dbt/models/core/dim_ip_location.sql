@@ -1,5 +1,5 @@
 SELECT
-  location_key,
+  COALESCE(location_key, -1) AS location_key,
   COALESCE(TRIM(city), 'Unknown') AS city,
   COALESCE(TRIM(region), 'Unknown') AS region,
   COALESCE(TRIM(country_short), 'Unknown') AS country_short,

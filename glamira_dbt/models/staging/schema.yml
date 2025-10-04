@@ -74,9 +74,6 @@ models:
       - name: visible_contents
         data_tests:
           - not_null
-      - name: quantity
-        data_tests:
-          - not_null
       - name: product_status
         data_tests:
           - not_null
@@ -104,23 +101,18 @@ models:
           - not_null
       - name: product_key
         data_tests:
-          - unique
           - not_null
       - name: user_key
         data_tests:
-          - unique
           - not_null
       - name: location_key
         data_tests:
-          - unique
           - not_null
       - name: date_key
         data_tests:
-          - unique
           - not_null
       - name: order_key
         data_tests:
-          - unique
           - not_null
       - name: local_time
         data_tests:
@@ -128,12 +120,13 @@ models:
       - name: ip_address
         data_tests:
           - not_null
-      - name: quantity
+      - name: product_quantity
         data_tests:
           - not_null
-      - name: price
+      - name: product_price
         data_tests:
           - not_null
-      # - name: line_total
-      #   data_tests:
-      #     - not_null
+      - name: product_currency
+        data_tests:
+          - not_null
+      - name: line_total

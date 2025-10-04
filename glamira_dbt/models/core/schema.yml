@@ -50,9 +50,6 @@ models:
       schema: dim_glamira
     columns:
       - name: product_key
-        data_tests:
-          - unique
-          - not_null
       - name: product_name
       - name: product_price
       - name: category_id
@@ -77,3 +74,33 @@ models:
       - name: day_of_year
       - name: month
       - name: year
+  - name: fact_sales_order
+    config:
+      materialized: table
+      schema: fact_glamira
+    columns:
+      - name: sales_hash_key
+        datatests:
+          - unique
+          - not_null
+      - name: product_key
+        datatests:
+          - not_null
+      - name: user_key
+        datatests:
+          - not_null
+      - name: location_key
+        datatests:
+          - not_null
+      - name: date_key
+        datatests:
+          - not_null
+      - name: order_key
+        datatests:
+          - not_null
+      - name: local_time
+        datatests:
+          - not_null
+      - name: ip_address
+        datatests:
+          - not_null

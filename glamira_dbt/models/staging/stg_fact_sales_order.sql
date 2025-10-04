@@ -1,48 +1,44 @@
-WITH Step1_RawFilter AS (
+WITH rawFilter AS (
     SELECT
         ip,
         order_id,
-        product_id,
         user_id_db,
         time_stamp,
-        local_time
+        local_time,
+        collection,
+        cart_products
     FROM {{source('raw_dataset', 'raw_summary')}}
+    WHERE collection = 'checkout_success'
+        AND cart_products IS NOT NULL
 ),
 
-Step2_IpJoin AS (
+ipJoin AS (
     SELECT
         rf.*,
         l.location_key
-    FROM Step1_RawFilter rf
+    FROM rawFilter rf
     LEFT JOIN {{ref('dim_ip_location')}} AS l 
         ON rf.ip = l.ip
 ),
 
-Step3_ProductJoin AS (
-    SELECT
-        ij.*,
-        p.quantity,
-        p.product_price
-    FROM Step2_IpJoin ij
-    LEFT JOIN {{ref('dim_products')}} AS p 
-        ON SAFE_CAST(ij.product_id AS INTEGER) = p.product_key
-),
 
 UniqueSalesOrder AS (
     SELECT
-        FARM_FINGERPRINT(CONCAT(COALESCE(TRIM(SAFE_CAST(ip AS STRING)), ''), COALESCE(TRIM(SAFE_CAST(order_id AS STRING)), ''), COALESCE(TRIM(SAFE_CAST(product_id AS STRING)), ''))) AS sales_hash_key,
-        SAFE_CAST(product_id AS INTEGER) AS product_key,
-        COALESCE(TRIM('user_id_db', 'Unknown')) AS user_key,
-        location_key,
+        DISTINCT FARM_FINGERPRINT(CONCAT(COALESCE(TRIM(SAFE_CAST(ip AS STRING)), ''), COALESCE(TRIM(SAFE_CAST(order_id AS STRING)), ''), COALESCE(TRIM(SAFE_CAST(product_id AS STRING)), ''))) AS sales_hash_key,
+        COALESCE(SAFE_CAST(user_id_db AS INTEGER), -1) AS user_key,
+        COALESCE(SAFE_CAST(location_key AS INTEGER), -1) AS location_key,
+        COALESCE(SAFE_CAST(order_id AS INTEGER), -1) AS order_key,
         CAST(UNIX_SECONDS(CAST(time_stamp AS TIMESTAMP)) AS INTEGER) AS date_key,
-        COALESCE(TRIM('order_id', 'Unknown')) AS order_key,
         CAST(local_time AS STRING) AS local_time,
         ip AS ip_address,
-        quantity,
-        product_price AS price,
-        ROW_NUMBER() OVER (PARTITION BY product_id, ip ORDER BY time_stamp) AS rn
-    FROM Step3_ProductJoin
-    WHERE location_key IS NOT NULL AND quantity IS NOT NULL
+        COALESCE(cp.product_id, -1) AS product_key,
+        SAFE_CAST(cp.amount AS INT64) AS product_quantity,
+        COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0) AS product_price,  
+        COALESCE(cp.currency, 'Unknown') AS product_currency,
+        COALESCE(SAFE_CAST(cp.amount AS INT64), 0) * COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0) AS line_total
+    FROM ipJoin
+    CROSS JOIN UNNEST(cart_products) AS cp
+    WHERE cp.product_id IS NOT NULL
 )
 
 SELECT
@@ -54,7 +50,8 @@ SELECT
     order_key,
     local_time,
     ip_address,
-    quantity,
-    price
+    product_quantity,
+    product_price,
+    product_currency,
+    line_total
 FROM UniqueSalesOrder
-WHERE rn = 1
