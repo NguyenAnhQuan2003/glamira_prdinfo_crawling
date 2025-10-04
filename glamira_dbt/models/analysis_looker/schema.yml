@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: analysis_gender
+    config:
+      materialized: table
+      schema: glamira_analysis
+    columns:
+      - name: product_key
+        data_tests:
+          - not_null
+      - name: product_gender
+        data_tests:
+          - not_null

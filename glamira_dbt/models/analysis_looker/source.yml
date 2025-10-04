@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: dim_glamira
+    database: sinuous-maker-466913-j5
+    schema: dim_glamira
+    tables:
+      - name: dim_date
+      - name: dim_products
+      - name: dim_ip_location
+      - name: dim_user
+  - name: fact_glamira
+    database: sinuous-maker-466913-j5
+    schema: fact_glamira
+    tables:
+      - name: fact_sales_order
