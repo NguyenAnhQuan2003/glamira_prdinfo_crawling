@@ -5,7 +5,7 @@ models:
     description: "table ip_location"
     config:
       materialized: "table"
-      schema: glamira_analysis
+      schema: dim_glamira
     columns:
       - name: location_key
         data_tests:
@@ -29,40 +29,30 @@ models:
   - name: dim_user
     config:
       materialized: table
-      schema: glamira_analysis
+      schema: dim_glamira
     columns:
       - name: user_key
         data_test:
           - unique
           - not_null
-      - name: device_id
-        data_tests:
-          - not_null
       - name: email_address
-        data_tests:
-          - not_null
-      - name: user_agent
         data_tests:
           - not_null
   - name: dim_products
     config:
       materialized: table
-      schema: glamira_analysis
+      schema: dim_glamira
     columns:
       - name: product_key
       - name: product_name
-      - name: product_price
-      - name: category_id
       - name: category_name
-      - name: collection_id
       - name: collection_name
       - name: product_type
-      - name: visible_contents
-      - name: product_status
+      - name: product_gender
   - name: dim_date
     config:
       materialized: table
-      schema: glamira_analysis
+      schema: dim_glamira
     columns:
       - name: date_key
         data_tests:
@@ -77,7 +67,7 @@ models:
   - name: fact_sales_order
     config:
       materialized: table
-      schema: glamira_analysis
+      schema: fact_glamira
     columns:
       - name: sales_hash_key
         datatests:

@@ -1,23 +1,25 @@
 WITH UniqueUsers AS (
-    SELECT 
-        COALESCE(SAFE_CAST(user_id_db AS INTEGER), -1) AS user_key,
-        COALESCE(TRIM(device_id), 'Unknown') as device_id,
-        COALESCE(TRIM(email_address), 'Unknown') as email_address,
-        COALESCE(TRIM(user_agent), 'Unknown') as user_agent,
-        ROW_NUMBER() OVER (PARTITION BY user_id_db ORDER BY email_address) AS rn
-    FROM
+    SELECT
+        DISTINCT COALESCE(SAFE_CAST(user_id_db AS INTEGER), -1) AS user_key,
+        COALESCE(NULLIF(TRIM(email_address), ''), 'Unknown') AS email_address
+    FROM 
         {{source('raw_dataset', 'raw_summary')}}
-    -- WHERE
-    --     TRIM(device_id) IS NOT NULL AND TRIM(device_id) != '' AND TRIM(device_id) != '-'
-    --     AND TRIM(email_address) IS NOT NULL AND TRIM(email_address) != '' AND TRIM(email_address) != '-'
-    --     AND TRIM(user_agent) IS NOT NULL AND TRIM(user_agent) != '' AND TRIM(user_agent) != '-'
+    WHERE user_id_db IS NOT NULL OR email_address IS NOT NULL
+),
+
+CheckDuplicates AS (
+    SELECT
+        user_key,
+        COUNT(*) as duplicate_count
+    FROM UniqueUsers
+    GROUP BY user_key
+    HAVING COUNT(*) > 1
 )
+
 SELECT
-    user_key,
-    device_id,
-    email_address,
-    user_agent
-FROM 
-    UniqueUsers
-WHERE
-    rn = 1
+    uu.user_key,
+    uu.email_address
+FROM UniqueUsers uu
+LEFT JOIN CheckDuplicates cd
+    ON uu.user_key = cd.user_key
+WHERE cd.user_key IS NULL OR cd.duplicate_count = 1

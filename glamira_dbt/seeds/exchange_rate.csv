@@ -1,0 +1,226 @@
+country_name,country_code,currency_symbol,currency_name,exchange_rate_to_usd
+United Arab Emirates,AE,AED,UAE Dirham,0.2722
+Saudi Arabia,SA,SAR,Saudi Riyal,0.2665
+Spain,ES,€,Euro,1.0712
+Canada,CA,CAD$,Canadian Dollar,0.7305
+Argentina,AR,AR$,Argentine Peso,0.0011500000000000002
+United States of America,US,$,United States Dollar,1.0
+Global,COM,$,United States Dollar,1.0
+Static html,LOCAL,$,United States Dollar,1.0
+Denmark,DK,DKkr,Danish Krone,0.1432
+Norway,NO,NOkr,Norwegian Krone,0.09340000000000001
+Thailand,TH,฿,Thai Baht,0.027200000000000002
+Malaysia,MY,RM,Malaysian Ringgit,0.21250000000000002
+China,CN,CN￥,Chinese Yuan,0.1378
+Angola,AO,Kz,Angolan Kwanza,0.0012000000000000001
+Austria,AT,€,Euro,1.0712
+Slovakia,SK,€,Euro,1.0712
+New Zealand,NZ,NZD$,New Zealand Dollar,0.6051000000000001
+Hungary,HU,Ft,Hungarian Forint,0.0027700000000000003
+France,FR,€,Euro,1.0712
+Serbia,RS,din,Serbian Dinar,0.00918
+Latvia,LV,€,Euro,1.0712
+Estonia,EE,€,Euro,1.0712
+Romania,RO,RON,Romanian Leu,0.21630000000000002
+South Africa,ZA,ZAR,South African Rand,0.0543
+Moldova (the Republic of),MD,Lei,Moldovan Leu,0.056
+Belgium,BE,€,Euro,1.0712
+Switzerland,CH,CHF,Swiss Franc,1.1098
+Kazakhstan,KZ,₸,Kazakhstani Tenge,0.0022
+Nigeria,NG,₦,Nigerian Naira,0.00067
+Cote D'ivoire,CI,CFA,West African CFA franc,0.0016
+Philippines,PH,₱,Philippine Peso,0.017
+Italy,IT,€,Euro,1.0712
+Azerbaijan,AZ,AZN,Azerbaijani Manat,0.5882000000000001
+Indonesia,ID,Rp,Indonesian Rupiah,6.390000000000001e-05
+Qatar,QA,QR,Qatari Riyal,0.2746
+Turkiye,TR,₺,Turkish Lira,0.030600000000000002
+Ethiopia,ET,Br,Ethiopian Birr,0.017400000000000002
+Sao Tome and Principe,ST,Db,São Tomé and Príncipe Dobra,4.4e-05
+Mexico,MX,MXN,Mexican Peso,0.0558
+Japan,JP,JP￥,Japanese Yen,0.006450000000000001
+Algeria,DZ,DA,Algerian Dinar,0.0074
+Timor-Leste,TL,$,United States Dollar,1.0
+Chile,CL,CLP,Chilean Peso,0.0010969999999999999
+Jordan,JO,JD,Jordanian Dinar,1.4104
+Egypt,EG,E£,Egyptian Pound,0.020900000000000002
+Iraq,IQ,IQD,Iraqi Dinar,0.00076
+Bahrain,BH,BD,Bahraini Dinar,2.6526
+Brazil,BR,R$,Brazilian Real,0.1837
+Paraguay,PY,₲,Paraguayan Guaraní,0.00013000000000000002
+Lithuania,LT,€,Euro,1.0712
+Yemen,YE,﷼,Yemeni Rial,0.004
+Peru,PE,PENS/,Peruvian Sol,0.2642
+Viet Nam,VN,₫,Vietnamese Dong,3.9300000000000007e-05
+Greece,GR,€,Euro,1.0712
+India,IN,₹,Indian Rupee,0.012
+Andorra,AD,€,Euro,1.0712
+Madagascar,MG,Ar,Malagasy Ariary,0.00022
+Colombia,CO,COP$,Colombian Peso,0.000257
+Venezuela (Bolivarian Republic of),VE,Bs.S.,Venezuelan Bolívar Soberano,2.75e-07
+Slovenia,SI,€,Euro,1.0712
+Armenia,AM,֏,Armenian Dram,0.0025
+Cuba,CU,$MN,Cuban Peso,0.0417
+Aruba,AW,ƒ,Aruban Florin,0.5556
+Ghana,GH,₵,Ghanaian Cedi,0.067
+Russian Federation,RU,₽,Russian Ruble,0.011
+Honduras,HN,L,Honduran Lempira,0.0405
+Malta,MT,€,Euro,1.0712
+Australia,AU,AU$,Australian Dollar,0.6518
+Iceland,IS,ISKr,Icelandic Króna,0.007130000000000001
+Greenland,GL,GLkr.,Danish Krone,0.1432
+Portugal,PT,€,Euro,1.0712
+Ukraine,UA,₴,Ukrainian Hryvnia,0.0246
+Somalia,SO,Sh.so.,Somali Shilling,0.0017000000000000001
+Myanmar,MM,K,Burmese Kyat,0.00028000000000000003
+Pakistan,PK,₨,Pakistani Rupee,0.0036000000000000003
+Iran (Islamic Republic of),IR,﷼,Iranian Rial,2.3e-05
+Ecuador,EC,$,United States Dollar,1.0
+Germany,DE,€,Euro,1.0712
+Nepal,NP,रू,Nepalese Rupee,0.007500000000000001
+Mali,ML,CFA,West African CFA franc,0.0016
+Gambia,GM,D,Gambian Dalasi,0.0148
+Montenegro,ME,€,Euro,1.0712
+Mongolia,MN,₮,Mongolian Tögrög,0.00029
+Brunei Darussalam,BN,B$,Brunei Dollar,0.7335
+Belize,BZ,BZ$,Belize Dollar,0.4975
+Tunisia,TN,DT,Tunisian Dinar,0.3185
+Morocco,MA,DH,Moroccan Dirham,0.1005
+Lebanon,LB,L£,Lebanese Pound,1.1e-05
+Kyrgyzstan,KG,с,Kyrgystani Som,0.0112
+North Macedonia,MK,ден,Macedonian Denar,0.0175
+Croatia,HR,€,Euro,1.0712
+Croatia,HR,kn,Croatian Kuna,0.16
+Bulgaria,BG,лв,Bulgarian Lev,0.5489
+Sweden,SE,SEKr,Swedish Krona,0.09340000000000001
+Cabo Verde,CV,CVE,Cape Verdean Escudo,0.0097
+Lao People's Democratic Republic,LA,₭,Lao Kip,4.6e-05
+Burkina Faso,BF,CFA,West African CFA franc,0.0016
+Congo,CG,FCFA,Central African CFA franc,0.0016
+Bosnia and Herzegovina,BA,KM,Bosnia-Herzegovina Convertible Mark,0.5478000000000001
+Belarus,BY,Br,Belarusian Ruble,0.305
+Burundi,BI,FBu,Burundian Franc,0.00035000000000000005
+El Salvador,SV,$,United States Dollar,1.0
+Mozambique,MZ,MT,Mozambican Metical,0.015700000000000002
+Puerto Rico,PR,$,United States Dollar,1.0
+Ireland,IE,€,Euro,1.0712
+Papua New Guinea,PG,K,Papua New Guinean Kina,0.256
+Fiji,FJ,FJ$,Fijian Dollar,0.444
+Botswana,BW,P,Botswana Pula,0.0718
+Zambia,ZM,ZK,Zambian Kwacha,0.039
+South Sudan,SS,SS£,South Sudanese Pound,0.00076
+Sri Lanka,LK,Rs,Sri Lankan Rupee,0.0033
+Cameroon,CM,FCFA,Central African CFA franc,0.0016
+Trinidad and Tobago,TT,TT$,Trinidad and Tobago Dollar,0.14750000000000002
+Taiwan (Province of China),TW,TW$,New Taiwan Dollar,0.0308
+Bangladesh,BD,৳,Bangladeshi Taka,0.0085
+Panama,PA,USD,Panamanian Balboa,1.0
+Nicaragua,NI,C$,Nicaraguan Córdoba,0.027
+Barbados,BB,Bds$,Barbadian Dollar,0.5
+San Marino,SM,€,Euro,1.0712
+Guinea,GN,FG,Guinean Franc,0.00012000000000000002
+Curacao,CW,ƒ,Netherlands Antillean Guilder,0.557
+Senegal,SN,CFA,West African CFA franc,0.0016
+"Tanzania, the United Republic of",TZ,TSh,Tanzanian Shilling,0.00038
+Guyana,GY,G$,Guyanese Dollar,0.0048000000000000004
+Albania,AL,L,Albanian Lek,0.0106
+Syrian Arab Republic,SY,S£,Syrian Pound,7.7e-05
+Djibouti,DJ,Fdj,Djiboutian Franc,0.0056
+Poland,PL,zł,Polish Złoty,0.24580000000000002
+Netherlands (Kingdom of the),NL,€,Euro,1.0712
+Luxembourg,LU,€,Euro,1.0712
+United Kingdom of Great Britain and Northern Ireland,GB,£,Pound Sterling,1.255
+Seychelles,SC,SR,Seychellois Rupee,0.073
+Namibia,NA,N$,Namibian Dollar,0.053
+Liechtenstein,LI,CHF,Swiss Franc,1.1098
+Rwanda,RW,RWF,Rwandan Franc,0.0007700000000000001
+Gabon,GA,FCFA,Central African CFA franc,0.0016
+Finland,FI,€,Euro,1.0712
+"Palestine, State of",PS,₪,Israeli New Shekel,0.268
+Gibraltar,GI,£,Gibraltar Pound,1.255
+Mauritius,MU,₨,Mauritian Rupee,0.021
+Comoros,KM,CF,Comorian Franc,0.0022
+Guadeloupe,GP,€,Euro,1.0712
+Guernsey,GG,£,Guernsey Pound,1.255
+French Guiana,GF,€,Euro,1.0712
+Korea (the Republic of),KR,₩,South Korean Won,0.00072
+Israel,IL,₪,Israeli New Shekel,0.268
+Zimbabwe,ZW,Z$,Zimbabwean Dollar,7.4e-05
+Congo (the Democratic Republic of the),CD,FC,Congolese Franc,0.00035000000000000005
+Eswatini,SZ,L,Eswatini Lilangeni,0.053
+Hong Kong,HK,HK$,Hong Kong Dollar,0.1278
+French Polynesia,PF,₣,CFP Franc,0.009000000000000001
+Isle of Man,IM,£,Manx Pound,1.255
+Jersey,JE,£,Jersey Pound,1.255
+Czechia,CZ,Kč,Czech Koruna,0.0436
+Kenya,KE,KSh,Kenyan Shilling,0.0077
+Uganda,UG,USh,Ugandan Shilling,0.00027
+Cambodia,KH,៛,Cambodian Riel,0.00024000000000000003
+Cyprus,CY,€,Euro,1.0712
+Benin,BJ,CFA,West African CFA franc,0.0016
+Mayotte,YT,€,Euro,1.0712
+Jamaica,JM,J$,Jamaican Dollar,0.0064
+Togo,TG,CFA,West African CFA franc,0.0016
+Martinique,MQ,€,Euro,1.0712
+Lesotho,LS,L,Lesotho Loti,0.053
+Oman,OM,﷼,Omani Rial,2.5974
+Monaco,MC,€,Euro,1.0712
+Georgia,GE,₾,Georgian Lari,0.35000000000000003
+Uzbekistan,UZ,so'm,Uzbekistan Som,7.9e-05
+Bahamas,BS,B$,Bahamian Dollar,1.0
+Niger,NE,CFA,West African CFA franc,0.0016
+Haiti,HT,G,Haitian Gourde,0.007500000000000001
+Faroe Islands,FO,FOkr,Faroese Króna,0.1432
+Suriname,SR,SR$,Surinamese Dollar,0.028
+New Caledonia,NC,₣,CFP Franc,0.009000000000000001
+Reunion,RE,€,Euro,1.0712
+Grenada,GD,EC$,East Caribbean Dollar,0.3704
+Saint Martin (French part),MF,€,Euro,1.0712
+Bhutan,BT,Nu.,Bhutanese Ngultrum,0.012
+Singapore,SG,SGD$,Singapore Dollar,0.7335
+Guam,GU,$,United States Dollar,1.0
+Libya,LY,LD,Libyan Dinar,0.20600000000000002
+Turks and Caicos Islands,TC,$,United States Dollar,1.0
+Sudan,SD,SD£,Sudanese Pound,0.0017000000000000001
+Nauru,NR,NR$,Australian Dollar,0.6518
+Anguilla,AI,EC$,East Caribbean Dollar,0.3704
+Central African Republic,CF,FCFA,Central African CFA franc,0.0016
+Malawi,MW,MK,Malawian Kwacha,0.0005700000000000001
+"Bonaire, Sint Eustatius and Saba",BQ,$,United States Dollar,1.0
+Saint Lucia,LC,EC$,East Caribbean Dollar,0.3704
+Cayman Islands,KY,CI$,Cayman Islands Dollar,1.2
+Tajikistan,TJ,ЅМ,Tajikistani Somoni,0.0915
+Solomon Islands,SB,SI$,Solomon Islands Dollar,0.11800000000000001
+Bermuda,BM,$,Bermudian Dollar,1.0
+Afghanistan,AF,؋,Afghan Afghani,0.014
+Macao,MO,MOP$,Macanese Pataca,0.12380000000000001
+Aland Islands,AX,€,Euro,1.0712
+Northern Mariana Islands,MP,$,United States Dollar,1.0
+Mauritania,MR,UM,Mauritanian Ouguiya,0.0025
+Tonga,TO,T$,Tongan Paʻanga,0.422
+Samoa,WS,WS$,Samoan Tālā,0.358
+Holy See,VA,€,Euro,1.0712
+Virgin Islands (British),VG,$,United States Dollar,1.0
+Guinea-Bissau,GW,CFA,West African CFA franc,0.0016
+Falkland Islands [Malvinas],FK,£,Falkland Islands Pound,1.255
+Chad,TD,FCFA,Central African CFA franc,0.0016
+Maldives,MV,.ރ,Maldivian Rufiyaa,0.0648
+Liberia,LR,L$,Liberian Dollar,0.005200000000000001
+Dominica,DM,EC$,East Caribbean Dollar,0.3704
+Sint Maarten (Dutch part),SX,ƒ,Netherlands Antillean Guilder,0.557
+Virgin Islands (U.S.),VI,$,United States Dollar,1.0
+Sierra Leone,SL,Le,Sierra Leonean Leone,4.2999999999999995e-05
+Turkmenistan,TM,m,Turkmenistan Manat,0.2857
+Equatorial Guinea,GQ,FCFA,Central African CFA franc,0.0016
+Cook Islands,CK,CK$,New Zealand Dollar,0.6051000000000001
+Antigua and Barbuda,AG,EC$,East Caribbean Dollar,0.3704
+Saint Vincent and The Grenadines,VC,EC$,East Caribbean Dollar,0.3704
+Saint Kitts and Nevis,KN,EC$,East Caribbean Dollar,0.3704
+Vanuatu,VU,VT,Vanuatu Vatu,0.008
+Wallis and Futuna,WF,₣,CFP Franc,0.009000000000000001
+Dominican Republic,DO,DOP$,Dominican Peso,0.017
+Guatemala,GT,GTQQ,Guatemalan Quetzal,0.1287
+Uruguay,UY,UYU,Uruguayan Peso,0.0253
+Bolivia (Plurinational State of),BO,BOBBs,Bolivian Boliviano,0.1444
+Costa Rica,CR,CRC₡,Costa Rican Colón,0.0019249999999999998
+Kuwait,KW,دك‏,Kuwaiti Dinar,3.255

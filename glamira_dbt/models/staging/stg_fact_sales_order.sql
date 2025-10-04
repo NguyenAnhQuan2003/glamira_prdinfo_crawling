@@ -34,7 +34,7 @@ UniqueSalesOrder AS (
         COALESCE(cp.product_id, -1) AS product_key,
         SAFE_CAST(cp.amount AS INT64) AS product_quantity,
         COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0) AS product_price,  
-        COALESCE(cp.currency, 'Unknown') AS product_currency,
+        COALESCE(NULLIF(TRIM(cp.currency), ''), 'Unknown') AS product_currency,
         COALESCE(SAFE_CAST(cp.amount AS INT64), 0) * COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0) AS line_total
     FROM ipJoin
     CROSS JOIN UNNEST(cart_products) AS cp

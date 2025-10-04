@@ -33,13 +33,7 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: device_id
-        data_tests:
-          - not_null
       - name: email_address
-        data_tests:
-          - not_null
-      - name: user_agent
         data_tests:
           - not_null
   - name: stg_raw_products
@@ -53,16 +47,7 @@ models:
       - name: product_name
         data_tests:
           - not_null
-      - name: product_price
-        data_tests:
-          - not_null
-      - name: category_id
-        data_tests:
-          - not_null
       - name: category_name
-        data_tests:
-          - not_null
-      - name: collection_id
         data_tests:
           - not_null
       - name: collection_name
@@ -71,10 +56,7 @@ models:
       - name: product_type
         data_tests:
           - not_null
-      - name: visible_contents
-        data_tests:
-          - not_null
-      - name: product_status
+      - name: product_gender
         data_tests:
           - not_null
   - name: stg_raw_date

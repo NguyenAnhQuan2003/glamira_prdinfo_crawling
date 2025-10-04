@@ -1,6 +1,6 @@
 WITH UniqueDate AS (
     SELECT
-        CAST(UNIX_SECONDS(CAST(time_stamp AS TIMESTAMP)) AS INTEGER) AS date_key,
+        DISTINCT CAST(UNIX_SECONDS(CAST(time_stamp AS TIMESTAMP)) AS INTEGER) AS date_key,
         CAST(time_stamp AS DATE) AS date,
         EXTRACT(DAYOFWEEK FROM CAST(time_stamp AS TIMESTAMP)) AS day_of_week,
         EXTRACT(DAY FROM CAST(time_stamp AS TIMESTAMP)) AS day_of_month,
