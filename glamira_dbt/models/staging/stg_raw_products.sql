@@ -1,4 +1,4 @@
-WITH UniqueProducts AS (
+WITH stg_raw_products_get_raw_products AS (
     SELECT
         DISTINCT
         COALESCE(product_id, -1) AS product_key,
@@ -17,4 +17,4 @@ SELECT
     collection_name,
     product_type,
     product_gender
-FROM UniqueProducts
+FROM stg_raw_products_get_raw_products

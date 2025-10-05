@@ -12,3 +12,23 @@ models:
       - name: product_gender
         data_tests:
           - not_null
+  - name: analysis_product_top10
+    config:
+      materialized: table
+      schema: glamira_analysis
+    columns:
+      - name: product_key
+        data_tests:
+          - not_null
+      - name: line_total
+        data_tests:
+          - not_null
+      - name: product_name
+        data_tests:
+          - not_null
+      - name: product_price
+        data_tests:
+          - not_null
+      - name: product_gender
+        data_tests:
+          - not_null

@@ -19,10 +19,7 @@ models:
       - name: country_short
         data_tests:
           - not_null
-      - name: country_long
-        data_tests:
-          - not_null
-      - name: ip
+      - name: country_name
         data_tests:
           - not_null
   - name: stg_raw_user

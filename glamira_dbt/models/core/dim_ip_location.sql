@@ -1,8 +1,7 @@
 SELECT
-  COALESCE(location_key, -1) AS location_key,
-  COALESCE(TRIM(city), 'Unknown') AS city,
-  COALESCE(TRIM(region), 'Unknown') AS region,
-  COALESCE(TRIM(country_short), 'Unknown') AS country_short,
-  COALESCE(TRIM(country_long), 'Unknown') AS country_long,
-  COALESCE(TRIM(ip), 'Unknown') AS ip,
+    DISTINCT location_key,
+    city,
+    region,
+    country_short,
+    country_name
 FROM {{ ref('stg_raw_ip_location') }}

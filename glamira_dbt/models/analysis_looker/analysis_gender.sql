@@ -11,6 +11,8 @@ joinProduct AS (
     FROM checkSuccess cs
     INNER JOIN {{source('dim_glamira', 'dim_products')}} dp
     ON dp.product_key = cs.product_key
+    WHERE dp.product_gender != "Unknown"
+        AND dp.product_gender != "false"
 )
 SELECT 
     product_key,
