@@ -1,4 +1,4 @@
-WITH fact_sales_order_succcess AS (
+WITH fact_sales_order_raw_summary AS (
     SELECT
         ip,
         order_id,
@@ -18,7 +18,7 @@ join_raw_ip_location AS (
         COALESCE(NULLIF(TRIM(l.city), ''), 'Unknown') AS city,
         COALESCE(NULLIF(TRIM(l.region), ''), 'Unknown') AS region,
         COALESCE(NULLIF(TRIM(l.country_long), ''), 'Unknown') AS country_name
-    FROM fact_sales_order_succcess rf
+    FROM fact_sales_order_raw_summary rf
     LEFT JOIN {{source('raw_dataset', 'raw_ip_location')}} AS l 
         ON rf.ip = l.ip
     WHERE l.ip IS NOT NULL
@@ -45,13 +45,23 @@ stg_fact_sales_order AS (
         CAST(local_time AS STRING) AS local_time,
         ip AS ip_address,
         COALESCE(cp.product_id, -1) AS product_key,
-        SAFE_CAST(cp.amount AS INT64) AS product_quantity,
-        COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0) AS product_price,  
+        SUM(SAFE_CAST(cp.amount AS INT64)) AS product_quantity, 
+        AVG(COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0)) AS product_price, 
         COALESCE(NULLIF(TRIM(cp.currency), ''), 'Unknown') AS product_currency,
-        COALESCE(SAFE_CAST(cp.amount AS INT64), 0) * COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0) AS line_total
+        SUM(SAFE_CAST(cp.amount AS INT64)) * AVG(COALESCE(SAFE_CAST(TRIM(cp.price) AS FLOAT64), 0.0)) AS line_total
     FROM get_location_key
     CROSS JOIN UNNEST(cart_products) AS cp
     WHERE cp.product_id IS NOT NULL
+    GROUP BY
+        sales_hash_key,
+        user_key,
+        location_key,
+        order_key,
+        date_key,
+        local_time,
+        ip_address,
+        product_key,
+        product_currency
 )
 
 SELECT
