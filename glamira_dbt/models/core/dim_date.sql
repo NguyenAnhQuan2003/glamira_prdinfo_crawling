@@ -1,5 +1,5 @@
 SELECT 
-    DISTINCT COALESCE(date_key, -1) AS date_key,
+    date_key,
     date,
     day_of_month,
     day_of_week,

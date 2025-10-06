@@ -41,7 +41,7 @@ stg_fact_sales_order AS (
         COALESCE(SAFE_CAST(user_id_db AS INTEGER), -1) AS user_key,
         location_key,
         COALESCE(SAFE_CAST(order_id AS INTEGER), -1) AS order_key,
-        CAST(UNIX_SECONDS(CAST(time_stamp AS TIMESTAMP)) AS INTEGER) AS date_key,
+        CAST(FORMAT_DATE('%Y%m%d', CAST(time_stamp AS DATE)) AS INT64) AS date_key,
         CAST(local_time AS STRING) AS local_time,
         ip AS ip_address,
         COALESCE(cp.product_id, -1) AS product_key,
