@@ -20,15 +20,60 @@ models:
       - name: product_key
         data_tests:
           - not_null
-      - name: line_total
+      - name: line_total_usd
         data_tests:
           - not_null
       - name: product_name
         data_tests:
           - not_null
-      - name: product_price
+      - name: product_price_usd
         data_tests:
           - not_null
       - name: product_gender
+        data_tests:
+          - not_null
+  - name: analysis_location
+    config:
+      materialized: table
+      schema: glamira_analysis
+    columns:
+      - name: location_key
+        data_tests:
+          - not_null
+      - name: region
+        data_tests:
+          - not_null
+      - name: city
+        data_tests:
+          - not_null
+      - name: ip_address
+        data_tests:
+          - not_null
+  - name: analysis_total_revenue
+    config:
+      materialized: table
+      schema: glamira_analysis
+    columns:
+      - name: total_revenue
+        data_tests:
+          - not_null
+  - name: analysis_daily_avg_quantity
+    config:
+      materialized: table
+      schema: glamira_analysis
+    columns:
+      - name: average_total_quantity_per_day
+        data_tests:
+          - not_null
+      - name: total_quantity_per_day
+        data_tests:
+          - not_null
+      - name: date
+  - name: analysis_daily_success
+    config:
+      materialized: table
+      schema: glamira_analysis
+    columns:
+      - name: avg_total_orders_per_day
         data_tests:
           - not_null

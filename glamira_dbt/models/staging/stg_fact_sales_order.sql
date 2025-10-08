@@ -62,19 +62,30 @@ stg_fact_sales_order AS (
         ip_address,
         product_key,
         product_currency
+),
+exchange_rate AS (
+    SELECT
+        country_name,
+        country_code,
+        currency_symbol,
+        currency_name,
+        exchange_rate_to_usd
+    FROM {{ source('raw_dataset', 'exchange_rate') }}
 )
 
 SELECT
-    sales_hash_key,
-    product_key,
-    user_key,
-    location_key,
-    date_key,
-    order_key,
-    local_time,
-    ip_address,
-    product_quantity,
-    product_price,
-    product_currency,
-    line_total
-FROM stg_fact_sales_order
+    sf.sales_hash_key,
+    sf.product_key,
+    sf.user_key,
+    sf.location_key,
+    sf.date_key,
+    sf.order_key,
+    sf.local_time,
+    sf.ip_address,
+    sf.product_quantity,
+    sf.product_price * COALESCE(ex.exchange_rate_to_usd, 1.0) AS product_price_usd,
+    COALESCE(ex.currency_symbol, 'Unknown') AS product_currency,
+    sf.line_total * COALESCE(ex.exchange_rate_to_usd, 1.0) AS line_total_usd
+FROM stg_fact_sales_order sf
+LEFT JOIN exchange_rate ex 
+    ON sf.product_currency = ex.currency_symbol

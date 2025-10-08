@@ -91,3 +91,12 @@ models:
       - name: ip_address
         datatests:
           - not_null
+      - name: product_price_usd
+        data_tests:
+          - not_null
+      - name: line_total_usd
+        data_tests:
+          - not_null
+      - name: product_currency
+        data_tests:
+          - not_null
